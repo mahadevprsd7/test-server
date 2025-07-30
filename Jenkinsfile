@@ -36,14 +36,14 @@ pipeline {
           bat """
             scp -o StrictHostKeyChecking=no index.html Dockerfile %REMOTE_USER%@%REMOTE_HOST%:/tmp/
             ssh -o StrictHostKeyChecking=no %REMOTE_USER%@%REMOTE_HOST% ^
-              "rm -rf %REMOTE_DIR% && ^
-              mkdir -p %REMOTE_DIR% && ^
-              mv /tmp/index.html /tmp/Dockerfile %REMOTE_DIR% && ^
-              cd %REMOTE_DIR% && ^
-              docker rm -f %CONTAINER_NAME% || true && ^
-              docker build -t %DOCKER_IMAGE% . && ^
-              docker run -d --name %CONTAINER_NAME% -p 8080:80 %DOCKER_IMAGE%"
-          """
+                "rm -rf %REMOTE_DIR% && ^
+                mkdir -p %REMOTE_DIR% && ^
+                mv /tmp/index.html /tmp/Dockerfile %REMOTE_DIR% && ^
+                cd %REMOTE_DIR% && ^
+                docker rm -f %CONTAINER_NAME% || true && ^
+                docker build -t %DOCKER_IMAGE% . && ^
+                docker run -d --name %CONTAINER_NAME% -p 8080:80 %DOCKER_IMAGE%"
+        """
         }
       }
     }

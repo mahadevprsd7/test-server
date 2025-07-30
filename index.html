@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Climate Change Awareness</title>
+    <style>
+        /* Basic Styles for the Website */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+            color: #333;
+        }
+
+        header {
+            background-color: #00796b;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #004d40;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #80cbc4;
+            color: black;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #004d40;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .card {
+            background-color: #004d40;
+            color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex-basis: 30%;
+            text-align: center;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            background-color: #00796b;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .cta-btn:hover {
+            background-color: #004d40;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                padding: 12px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .cards-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 80%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Climate Change Awareness</h1>
+        <p>Understanding the Impact and How We Can Make a Difference</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#effects">Effects</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Main Content Section -->
+    <section id="home">
+        <h2>Welcome to Climate Change Awareness</h2>
+        <p>Climate change is one of the most significant challenges we face today. It affects our ecosystems, economies, and societies. This website will educate you on the dangers of climate change and what we can do to combat it.</p>
+    </section>
+
+    <section id="about">
+        <h2>What is Climate Change?</h2>
+        <p>Climate change refers to long-term changes in the average weather patterns on Earth. These changes are largely driven by human activities like burning fossil fuels, deforestation, and industrial processes, which increase the concentration of greenhouse gases in the atmosphere.</p>
+    </section>
+
+    <section id="effects">
+        <h2>Effects of Climate Change</h2>
+        <div class="cards-container">
+            <div class="card">
+                <h3>Rising Temperatures</h3>
+                <p>Global temperatures have been rising steadily, leading to heatwaves and changes in weather patterns. This affects agriculture, biodiversity, and human health.</p>
+            </div>
+            <div class="card">
+                <h3>Melting Ice Caps</h3>
+                <p>The polar ice caps and glaciers are melting at an alarming rate, causing sea levels to rise and threatening coastal communities around the world.</p>
+            </div>
+            <div class="card">
+                <h3>Extreme Weather</h3>
+                <p>Increased global warming results in more frequent and severe weather events such as hurricanes, droughts, and floods, which damage infrastructure and disrupt communities.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="solutions">
+        <h2>How We Can Help</h2>
+        <p>There are many things we can do to help mitigate climate change. Simple actions like reducing energy consumption, using renewable energy, and promoting environmental sustainability can make a significant difference.</p>
+        <button class="cta-btn" onclick="alert('Thank you for taking action! Stay informed and spread the word about climate change!')">Get Involved</button>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or want to learn more, feel free to reach out to us:</p>
+        <form id="contact-form">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+            <br><br>
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <br><br>
+            <button type="submit" onclick="submitForm()">Submit</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Climate Change Awareness</p>
+    </footer>
+
+    <!-- JavaScript for Form Handling -->
+    <script>
+        // Simple form submission handler
+        function submitForm() {
+            event.preventDefault(); // Prevents the form from refreshing the page
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+
+            if (name && email) {
+                alert('Thank you for contacting us, ' + name + '!');
+                document.getElementById('contact-form').reset(); // Resets the form
+            } else {
+                alert('Please fill out all fields before submitting.');
+            }
+        }
+    </script>
+
+</body>
+
+</html>

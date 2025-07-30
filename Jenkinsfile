@@ -20,7 +20,7 @@ pipeline {
     stage('Validate HTML') {
       steps {
         bat 'npm install -g html-validate'
-        bat 'html-validate index.html'
+        bat '"%APPDATA%\\npm\\html-validate.cmd" index.html'
       }
     }
 
